@@ -309,41 +309,8 @@ main section {
 }
 .year-photos img:nth-child(even) { transform: rotate(1.5deg); }
 
-/* ============ SPECIAL MOMENT ============ */
-.special-moment { background: var(--cream); }
-.special-caption {
-  font-family: var(--font-hand);
-  font-size: 1.35rem;
-  color: var(--mauve);
-  max-width: 480px;
-  margin: 0 auto 36px;
-  line-height: 1.5;
-}
-.video-wrap {
-  max-width: 460px;
-  margin: 0 auto;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px -18px rgba(62,42,56,0.4);
-}
-.video-wrap video { width: 100%; display: block; background: #000; }
-.bonus-photo {
-  margin-top: 46px;
-  display: inline-block;
-}
-.bonus-photo img {
-  width: 220px;
-  border-radius: 6px;
-  transform: rotate(2deg);
-  box-shadow: 0 16px 40px -16px rgba(62,42,56,0.35);
-  margin: 0 auto;
-}
-.bonus-photo p {
-  font-family: var(--font-hand);
-  font-size: 1.15rem;
-  color: var(--mauve);
-  margin-top: 10px;
-}
+/* ============ MORE OF US ============ */
+.more-us { background: var(--cream); }
 
 /* ============ BEAUTIFUL GALLERY ============ */
 .beautiful { background: linear-gradient(180deg, var(--cream-2) 0%, var(--blush) 100%); }
