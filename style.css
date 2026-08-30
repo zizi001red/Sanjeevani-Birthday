@@ -150,7 +150,10 @@ main section {
 .hero-name {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(3rem, 12vw, 6.5rem);
+  font-style: italic;
+  font-size: clamp(2.4rem, 9vw, 4.8rem);
+  line-height: 1.15;
+  max-width: 720px;
   margin: 0;
   color: var(--plum);
   text-shadow: 0 0 40px rgba(216,154,160,0.45);
