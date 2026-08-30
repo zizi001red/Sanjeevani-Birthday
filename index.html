@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjeevani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOCK SCREEN ================= -->
+<div id="lock-screen">
+  <div class="lock-inner">
+    <p class="lock-eyebrow">for Sanjeevani</p>
+    <p class="lock-line">something's waiting for you here.</p>
+    <p class="lock-line">just not yet.</p>
+    <div id="countdown" class="countdown"></div>
+  </div>
+</div>
+
+<!-- ================= MAIN SITE ================= -->
+<main id="site" hidden>
+
+  <!-- floating petals layer -->
+  <div class="petals" aria-hidden="true"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <p class="hero-eyebrow reveal">it's her birthday</p>
+    <h1 class="hero-name reveal">Sanjeevani</h1>
+    <p class="hero-sub reveal">est. 2018 &mdash; still going</p>
+    <div class="hero-scroll reveal" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- HANDWRITTEN NOTE -->
+  <section class="note-section" id="note">
+    <div class="note-card reveal">
+      <p class="note-tape" aria-hidden="true"></p>
+      <p class="note-text">
+        My baby,<br><br>
+        Seven years ago a professor was taking attendance and there was total chaos at the door &mdash; and somehow, out of that chaos, you turned around and asked me for my roll number. I didn't know that one second would turn into this.<br><br>
+        We've had so many lives together since then. Two stressed girls before exams. Two voices on a video call during a pandemic that kept us apart. Two people figuring out master's degrees in different corners of the same college. And then you left for Shimla, and I learned what it means to miss someone in your bones.<br><br>
+        Distance moved us apart. It never once touched the love.<br><br>
+        I made you this whole ridiculous website because I don't say this enough &mdash; you are one of the most important people who has ever happened to me. Happy birthday, my angel.<br><br>
+        always yours, baby.
+      </p>
+    </div>
+  </section>
+
+  <!-- MEMORIES -->
+  <section class="memories-intro" id="memories-intro">
+    <p class="section-eyebrow reveal">seven years, in pieces</p>
+    <h2 class="section-title reveal">our memories</h2>
+    <button class="btn-memories reveal" id="open-memories">open our memories</button>
+  </section>
+
+  <section class="timeline" id="timeline" hidden>
+    <div class="thread" aria-hidden="true"></div>
+
+    <div class="year-block" data-year="2018">
+      <div class="year-marker"><span>2018</span></div>
+      <p class="year-caption reveal">where it all started</p>
+      <div class="year-photos reveal">
+        <img src="images/2018-01.jpg" alt="2018 memory" loading="lazy">
+        <img src="images/2018-02.jpg" alt="2018 memory" loading="lazy">
+      </div>
+    </div>
+
+    <div class="year-block thin" data-year="2020">
+      <div class="year-marker"><span>2020</span></div>
+      <p class="year-caption reveal">the year the world stood still, and we lived on video calls</p>
+      <div class="year-photos reveal">
+        <img src="images/2020-illustration.jpg" alt="2020 memory" loading="lazy">
+        <img src="images/2020-02.jpg" alt="2020 memory" loading="lazy">
+      </div>
+    </div>
+
+    <div class="year-block" data-year="2021">
+      <div class="year-marker"><span>2021</span></div>
+      <p class="year-caption reveal">still finding our way back to each other</p>
+      <div class="year-photos reveal">
+        <img src="images/2021.jpg" alt="2021 memory" loading="lazy">
+      </div>
+    </div>
+
+    <div class="year-block" data-year="2022">
+      <div class="year-marker"><span>2022</span></div>
+      <p class="year-caption reveal">us, again</p>
+      <div class="year-photos reveal">
+        <img src="images/2022.jpg" alt="2022 memory" loading="lazy">
+      </div>
+    </div>
+
+    <div class="year-block" data-year="last">
+      <div class="year-marker"><span>the last time we met</span></div>
+      <p class="year-caption reveal">distance moved us apart. never once by heart.</p>
+      <div class="year-photos reveal">
+        <img src="images/last-meeting.jpg" alt="our last meeting" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIAL MOMENT VIDEO -->
+  <section class="special-moment" id="special-moment">
+    <p class="section-eyebrow reveal">even when you were away</p>
+    <h2 class="section-title reveal">your two friends, together</h2>
+    <p class="special-caption reveal">
+      I filmed this while you were away studying law &mdash; just so you'd know that even without you here, the people who love you found each other.
+    </p>
+    <div class="video-wrap reveal">
+      <video controls playsinline poster="images/moment-funny.jpg">
+        <source src="video/special-moment.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="bonus-photo reveal">
+      <img src="images/moment-funny.jpg" alt="us being ridiculous" loading="lazy">
+      <p>us, being completely unserious</p>
+    </div>
+  </section>
+
+  <!-- BECAUSE SHE'S BEAUTIFUL -->
+  <section class="beautiful" id="beautiful">
+    <p class="section-eyebrow reveal">a page just for you</p>
+    <h2 class="section-title reveal">because she's beautiful</h2>
+    <div class="beautiful-grid">
+      <img class="reveal" src="images/beautiful-01.jpg" alt="Sanjeevani" loading="lazy">
+      <img class="reveal" src="images/beautiful-02.jpg" alt="Sanjeevani" loading="lazy">
+      <img class="reveal quote-img" src="images/beautiful-quote.jpg" alt="quote" loading="lazy">
+      <img class="reveal" src="images/beautiful-03.jpg" alt="Sanjeevani" loading="lazy">
+      <img class="reveal" src="images/beautiful-04.jpg" alt="Sanjeevani" loading="lazy">
+      <img class="reveal collage-img" src="images/beautiful-collage.jpg" alt="collage of us" loading="lazy">
+    </div>
+  </section>
+
+  <!-- DANCE VIDEOS (placeholder) -->
+  <section class="dance" id="dance">
+    <p class="section-eyebrow reveal">coming soon</p>
+    <h2 class="section-title reveal">our dance videos</h2>
+    <p class="dance-placeholder reveal">this part is still being written &mdash; the chaos is coming.</p>
+  </section>
+
+  <!-- FUNNY BUTTON -->
+  <section class="funny" id="funny">
+    <button class="btn-funny reveal" id="funny-button">press this if you're my baby</button>
+    <div class="funny-reveal" id="funny-reveal" hidden>
+      <p>yes, obviously, you are.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing" id="closing">
+    <p class="closing-line reveal">happy birthday, baby.</p>
+    <p class="closing-sub reveal">here's to the years we've had, and every one still coming.</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
