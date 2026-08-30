@@ -164,6 +164,8 @@ main section {
   color: var(--mauve);
   margin: 14px 0 0;
 }
+.deco-flowers { margin: 22px 0 4px; }
+.deco-cake { margin-bottom: 18px; }
 .hero-scroll {
   margin-top: 70px;
   width: 1px;
