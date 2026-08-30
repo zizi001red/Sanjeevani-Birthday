@@ -43,14 +43,15 @@ if (isPreview) {
 function initPetals() {
   const layer = document.querySelector('.petals');
   if (!layer) return;
-  const count = window.innerWidth < 640 ? 10 : 18;
+  const count = window.innerWidth < 640 ? 16 : 26;
   for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
+    p.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14"><g><circle cx="7" cy="4" r="3" fill="var(--blush)"/><circle cx="7" cy="10" r="3" fill="var(--blush)"/><circle cx="4" cy="7" r="3" fill="var(--blush)"/><circle cx="10" cy="7" r="3" fill="var(--blush)"/><circle cx="7" cy="7" r="2" fill="var(--gold)"/></g></svg>`;
     p.style.left = Math.random() * 100 + 'vw';
     p.style.animationDuration = 8 + Math.random() * 10 + 's';
     p.style.animationDelay = Math.random() * 10 + 's';
-    p.style.opacity = 0.2 + Math.random() * 0.3;
+    p.style.opacity = 0.3 + Math.random() * 0.35;
     layer.appendChild(p);
   }
 }

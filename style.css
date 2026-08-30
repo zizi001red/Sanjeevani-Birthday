@@ -119,11 +119,6 @@ main section {
 .petal {
   position: absolute;
   top: -40px;
-  width: 10px;
-  height: 10px;
-  background: var(--rose);
-  border-radius: 50% 0 50% 50%;
-  opacity: 0.35;
   animation: fall linear infinite;
 }
 @keyframes fall {
@@ -214,6 +209,13 @@ main section {
 
 /* ============ MEMORIES INTRO ============ */
 .memories-intro { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%); }
+.deco-cupcake { margin: 0 auto 10px; }
+.flower-divider {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  background: var(--cream);
+}
 .btn-memories {
   font-family: var(--font-body);
   font-weight: 600;
