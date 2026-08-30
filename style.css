@@ -1,18 +1,19 @@
 /* ============ TOKENS ============ */
 :root {
-  --cream: #FBF3EE;
-  --cream-2: #F6E9E2;
-  --blush: #F3D9DC;
-  --rose: #D89AA0;
-  --rose-deep: #C07C87;
-  --lavender: #D8CDEA;
-  --gold: #C9A86A;
-  --mauve: #7D5568;
-  --plum: #3E2A38;
+  --cream: #FFF9F0;
+  --cream-2: #FFEFDA;
+  --blush: #FFD9E8;
+  --rose: #FF2D78;
+  --rose-deep: #E0004D;
+  --lavender: #C9A6FF;
+  --gold: #FFD400;
+  --mauve: #6B2FA0;
+  --plum: #1A1A1A;
+  --orange: #FF6B35;
 
-  --font-display: 'Cormorant Garamond', serif;
-  --font-hand: 'Caveat', cursive;
-  --font-body: 'Quicksand', sans-serif;
+  --font-display: 'Baloo 2', sans-serif;
+  --font-hand: 'Permanent Marker', cursive;
+  --font-body: 'Nunito', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -23,6 +24,7 @@ body {
   background: var(--cream);
   color: var(--plum);
   font-family: var(--font-body);
+  font-weight: 600;
   overflow-x: hidden;
 }
 
@@ -48,26 +50,26 @@ img { max-width: 100%; display: block; }
 .lock-inner { max-width: 420px; }
 .lock-eyebrow {
   font-family: var(--font-body);
+  font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 0.75rem;
-  color: var(--mauve);
+  color: var(--rose-deep);
   margin: 0 0 18px;
 }
 .lock-line {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.6rem;
   color: var(--plum);
   margin: 4px 0;
 }
 .countdown {
   margin-top: 32px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-family: var(--font-hand);
+  letter-spacing: 0.02em;
   color: var(--rose-deep);
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 /* ============ SHARED SECTION RHYTHM ============ */
@@ -80,35 +82,33 @@ main section {
 }
 
 .section-eyebrow {
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.72rem;
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
   color: var(--rose-deep);
-  margin: 0 0 10px;
-  font-weight: 600;
+  margin: 0 0 6px;
+  transform: rotate(-2deg);
+  display: inline-block;
 }
 .section-title {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.9rem);
   margin: 0 0 40px;
   color: var(--plum);
 }
 
-/* scroll reveal */
+/* scroll reveal - bouncy pop */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateY(28px) scale(0.94);
+  transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .reveal.in {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
-/* floating petals */
+/* floating confetti */
 .petals {
   position: fixed;
   inset: 0;
@@ -119,15 +119,12 @@ main section {
 .petal {
   position: absolute;
   top: -40px;
-  width: 10px;
-  height: 10px;
-  background: var(--rose);
-  border-radius: 50% 0 50% 50%;
-  opacity: 0.35;
+  width: 12px;
+  height: 12px;
   animation: fall linear infinite;
 }
 @keyframes fall {
-  to { transform: translateY(110vh) rotate(280deg); }
+  to { transform: translateY(110vh) rotate(360deg); }
 }
 
 /* ============ HERO ============ */
@@ -137,50 +134,59 @@ main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 30%, var(--blush) 0%, var(--cream) 65%);
+  background: var(--cream);
+  position: relative;
 }
-.hero-eyebrow {
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.78rem;
-  color: var(--rose-deep);
-  margin: 0 0 14px;
+.hero-burst {
+  position: absolute;
+  width: min(80vw, 480px);
+  height: min(80vw, 480px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  opacity: 0.55;
+  animation: spin 30s linear infinite;
+  z-index: 0;
 }
+@keyframes spin { to { transform: translate(-50%, -55%) rotate(360deg); } }
 .hero-name {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(2.4rem, 9vw, 4.8rem);
-  line-height: 1.15;
-  max-width: 720px;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 9vw, 4.6rem);
+  line-height: 1.1;
+  max-width: 760px;
   margin: 0;
   color: var(--plum);
-  text-shadow: 0 0 40px rgba(216,154,160,0.45);
+  position: relative;
+  z-index: 1;
+  -webkit-text-stroke: 0px;
 }
+.deco-flowers { margin: 22px 0 4px; position: relative; z-index: 1; }
+.deco-cake { margin-bottom: 18px; }
 .hero-sub {
   font-family: var(--font-hand);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--mauve);
   margin: 14px 0 0;
+  position: relative;
+  z-index: 1;
 }
-.deco-flowers { margin: 22px 0 4px; }
-.deco-cake { margin-bottom: 18px; }
 .hero-scroll {
   margin-top: 70px;
-  width: 1px;
+  width: 3px;
   height: 60px;
   background: var(--rose);
-  opacity: 0.5;
+  border-radius: 3px;
   position: relative;
+  z-index: 1;
 }
 .hero-scroll span {
   position: absolute;
   left: -3px;
   top: 0;
-  width: 7px;
-  height: 7px;
-  background: var(--rose-deep);
+  width: 9px;
+  height: 9px;
+  background: var(--gold);
   border-radius: 50%;
   animation: dropdown 2.2s ease-in-out infinite;
 }
@@ -191,57 +197,59 @@ main section {
 }
 
 /* ============ HANDWRITTEN NOTE ============ */
-.note-section { background: var(--cream); }
+.note-section { background: var(--cream-2); }
 .note-card {
   position: relative;
-  background: #FFFDFB;
-  border-radius: 4px;
+  background: #FFFFFF;
+  border: 3px solid var(--plum);
+  border-radius: 14px;
   padding: 56px 40px;
   max-width: 620px;
   margin: 0 auto;
-  box-shadow: 0 20px 60px -20px rgba(125,85,104,0.28);
-  transform: rotate(-0.6deg);
+  box-shadow: 10px 10px 0 var(--yellow);
+  transform: rotate(-1.2deg);
 }
-.note-card.in { transform: rotate(-0.6deg) translateY(0); }
 .note-tape {
   position: absolute;
-  top: -14px;
+  top: -16px;
   left: 50%;
-  transform: translateX(-50%) rotate(-3deg);
-  width: 90px;
-  height: 26px;
-  background: rgba(216,154,160,0.55);
+  transform: translateX(-50%) rotate(-4deg);
+  width: 100px;
+  height: 30px;
+  background: var(--rose);
+  opacity: 0.85;
 }
 .note-text {
   font-family: var(--font-hand);
-  font-size: 1.55rem;
-  line-height: 1.55;
+  font-size: 1.4rem;
+  line-height: 1.65;
   color: var(--plum);
   text-align: left;
   margin: 0;
 }
 
 /* ============ MEMORIES INTRO ============ */
-.memories-intro { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%); }
-.btn-memories,
-.btn-funny {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.03em;
-  color: #fff;
-  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
-  border: none;
+.memories-intro { background: var(--cream); }
+.btn-memories {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--plum);
+  background: var(--yellow);
+  border: 3px solid var(--plum);
   padding: 16px 38px;
   border-radius: 40px;
   cursor: pointer;
-  box-shadow: 0 10px 30px -10px rgba(192,124,135,0.6);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 6px 6px 0 var(--plum);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-memories:hover,
-.btn-funny:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 34px -10px rgba(192,124,135,0.75);
+.btn-memories:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--plum);
+}
+.btn-memories:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--plum);
 }
 
 /* ============ TIMELINE ============ */
@@ -255,9 +263,8 @@ main section {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 2px;
-  background: var(--rose);
-  opacity: 0.55;
+  width: 3px;
+  background: repeating-linear-gradient(180deg, var(--rose) 0 10px, transparent 10px 18px);
   transform: translateX(-50%);
 }
 .year-block {
@@ -266,7 +273,6 @@ main section {
   max-width: 640px;
   margin: 0 auto;
 }
-.year-block.thin .thread-segment { opacity: 0.15; }
 .year-marker {
   display: flex;
   justify-content: center;
@@ -274,46 +280,51 @@ main section {
 }
 .year-marker span {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.3rem;
-  background: var(--cream);
-  border: 1.5px solid var(--rose);
-  color: var(--rose-deep);
-  padding: 8px 26px;
-  border-radius: 30px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  background: var(--rose);
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 50px;
+  border: 3px solid var(--plum);
   position: relative;
   z-index: 2;
+  transform: rotate(-2deg);
+  display: inline-block;
+  box-shadow: 4px 4px 0 var(--plum);
 }
 .year-block.thin .year-marker span {
-  border-style: dashed;
-  opacity: 0.7;
+  background: var(--lavender);
+  opacity: 0.85;
 }
 .year-caption {
   font-family: var(--font-hand);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: var(--mauve);
   margin: 0 0 26px;
 }
 .year-photos {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 16px;
   justify-content: center;
 }
 .year-photos img {
   width: 260px;
   border-radius: 6px;
-  box-shadow: 0 16px 40px -16px rgba(62,42,56,0.35);
-  transform: rotate(-1.5deg);
+  border: 4px solid #fff;
+  box-shadow: 6px 8px 0 rgba(26,26,26,0.15);
+  transform: rotate(-4deg);
 }
-.year-photos img:nth-child(even) { transform: rotate(1.5deg); }
+.year-photos img:nth-child(2) { transform: rotate(3deg); }
+.year-photos img:nth-child(3) { transform: rotate(-6deg); }
+.year-photos img:nth-child(4) { transform: rotate(5deg); }
 
 /* ============ MORE OF US ============ */
 .more-us { background: var(--cream); }
 
 /* ============ BEAUTIFUL GALLERY ============ */
-.beautiful { background: linear-gradient(180deg, var(--cream-2) 0%, var(--blush) 100%); }
+.beautiful { background: var(--cream-2); }
 .beautiful-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -325,7 +336,8 @@ main section {
   object-fit: cover;
   aspect-ratio: 3/4;
   border-radius: 10px;
-  box-shadow: 0 14px 34px -16px rgba(62,42,56,0.4);
+  border: 4px solid #fff;
+  box-shadow: 5px 6px 0 rgba(26,26,26,0.15);
 }
 .beautiful-grid .quote-img,
 .beautiful-grid .collage-img {
@@ -335,23 +347,10 @@ main section {
 }
 
 /* ============ DANCE PLACEHOLDER ============ */
-.dance { background: var(--blush); }
+.dance { background: var(--lavender); }
 .dance-placeholder {
   font-family: var(--font-hand);
-  font-size: 1.4rem;
-  color: var(--mauve);
-}
-
-/* ============ FUNNY BUTTON ============ */
-.funny {
-  background: var(--lavender);
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-.funny-reveal {
-  margin-top: 26px;
-  font-family: var(--font-hand);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--plum);
 }
 
@@ -362,20 +361,19 @@ main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 60%, var(--blush) 0%, var(--cream) 70%);
+  background: var(--rose);
 }
 .closing-line {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 800;
   font-size: clamp(2rem, 6vw, 3.2rem);
-  color: var(--plum);
+  color: #fff;
   margin: 0 0 14px;
 }
 .closing-sub {
   font-family: var(--font-hand);
   font-size: 1.3rem;
-  color: var(--mauve);
+  color: var(--gold);
 }
 
 /* ============ MOBILE ============ */
