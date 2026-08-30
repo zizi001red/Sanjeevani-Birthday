@@ -358,10 +358,25 @@ main section {
   border-radius: 10px;
   box-shadow: 0 14px 34px -16px rgba(62,42,56,0.4);
 }
-.beautiful-grid .quote-img,
 .beautiful-grid .collage-img {
   aspect-ratio: auto;
   object-fit: contain;
+  background: #fff;
+}
+
+/* ============ QUOTES ============ */
+.quotes { background: var(--blush); padding-top: 80px; padding-bottom: 80px; }
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.quote-tile {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 14px 34px -16px rgba(62,42,56,0.4);
   background: #fff;
 }
 
