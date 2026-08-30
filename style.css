@@ -297,6 +297,49 @@ main section {
 }
 .year-photos img:nth-child(even) { transform: rotate(1.5deg); }
 
+/* ============ LITTLE NOTE INTERSTITIALS ============ */
+.little-note {
+  padding: 70px 24px;
+  background: var(--cream);
+}
+.little-note-text {
+  font-family: var(--font-hand);
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+  color: var(--rose-deep);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* ============ LITTLE THINGS LIST ============ */
+.little-things { background: var(--cream-2); }
+.little-things-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.little-things-list li {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  color: var(--plum);
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+}
+.little-things-list li::before {
+  content: "\2661";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: var(--rose-deep);
+  font-size: 1.2rem;
+}
+
 /* ============ MORE OF US ============ */
 .more-us { background: var(--cream); }
 
