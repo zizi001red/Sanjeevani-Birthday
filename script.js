@@ -1,8 +1,11 @@
 // ---- CONFIG ----
+// Set to false once you're ready to send the real link — that turns the countdown lock back on.
+const DEV_MODE = true;
+
 // Sept 10, 2026, 00:00 IST expressed in UTC (IST = UTC+5:30)
 const UNLOCK_AT = Date.UTC(2026, 8, 9, 18, 30, 0);
 const params = new URLSearchParams(window.location.search);
-const isPreview = params.get('preview') === '1';
+const isPreview = DEV_MODE || params.get('preview') === '1';
 
 const lockScreen = document.getElementById('lock-screen');
 const site = document.getElementById('site');
