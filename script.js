@@ -43,18 +43,14 @@ if (isPreview) {
 function initPetals() {
   const layer = document.querySelector('.petals');
   if (!layer) return;
-  const colors = ['var(--rose)', 'var(--yellow)', 'var(--violet, var(--lavender))', 'var(--orange)', 'var(--mauve)'];
-  const count = window.innerWidth < 640 ? 14 : 24;
+  const count = window.innerWidth < 640 ? 10 : 18;
   for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
     p.style.left = Math.random() * 100 + 'vw';
-    p.style.background = colors[i % colors.length];
-    p.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-    p.style.transform = `rotate(${Math.random() * 360}deg)`;
-    p.style.animationDuration = 6 + Math.random() * 8 + 's';
+    p.style.animationDuration = 8 + Math.random() * 10 + 's';
     p.style.animationDelay = Math.random() * 10 + 's';
-    p.style.opacity = 0.55 + Math.random() * 0.35;
+    p.style.opacity = 0.2 + Math.random() * 0.3;
     layer.appendChild(p);
   }
 }
