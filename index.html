@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -32,8 +32,22 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <svg class="deco-corner deco-corner-tl sway reveal" viewBox="0 0 80 80" width="70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(30,30)"><circle r="7" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-9" cy="4" r="6" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="9" cy="4" r="6" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-9" r="6" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="3" fill="var(--gold)"/></g>
+      <path d="M30 45 Q20 55 15 68" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
+    </svg>
+    <svg class="deco-corner deco-corner-br sway-rev reveal" viewBox="0 0 80 80" width="70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(50,50)"><circle r="7" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-9" cy="4" r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="9" cy="4" r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-9" r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="3" fill="var(--gold)"/></g>
+      <path d="M50 65 Q60 55 65 42" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
+    </svg>
+
+    <svg class="sparkle sparkle-1 twinkle" viewBox="0 0 20 20" width="14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="var(--gold)"/></svg>
+    <svg class="sparkle sparkle-2 twinkle-delay" viewBox="0 0 20 20" width="10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="var(--rose)"/></svg>
+
     <h1 class="hero-name reveal">It's HER Birthday.</h1>
-    <svg class="deco-flowers reveal" viewBox="0 0 100 60" width="100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="deco-flowers sway reveal" viewBox="0 0 100 60" width="100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M20 60 Q22 40 30 25" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
       <path d="M50 60 Q50 35 50 15" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
       <path d="M80 60 Q78 40 70 25" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
@@ -44,6 +58,14 @@
       <path d="M75 45 Q85 42 88 35" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
     </svg>
     <p class="hero-sub reveal">est. 2018 &mdash; still going</p>
+
+    <svg class="deco-mini-cake reveal" viewBox="0 0 60 50" width="46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path class="flame" d="M30 2 C 32 6, 32 8, 30 11 C 28 8, 28 6, 30 2 Z" fill="var(--gold)"/>
+      <rect x="28" y="11" width="4" height="7" rx="1.5" fill="var(--rose-deep)"/>
+      <path d="M12 18 L48 18 L44 40 Q30 46 16 40 Z" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
+      <path d="M12 18 Q18 12 30 18 Q42 12 48 18" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
+    </svg>
+
     <div class="hero-scroll reveal" aria-hidden="true">
       <span></span>
     </div>
@@ -210,6 +232,6 @@
 
 </main>
 
-<script src="script.js?v=15"></script>
+<script src="script.js?v=16"></script>
 </body>
 </html>

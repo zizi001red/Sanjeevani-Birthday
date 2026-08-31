@@ -132,7 +132,50 @@ main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 30%, var(--blush) 0%, var(--cream) 65%);
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 35%, var(--blush) 0%, var(--cream) 65%);
+  animation: glowPulse 6s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+.deco-corner {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.8;
+}
+.deco-corner-tl { top: 8%; left: 6%; }
+.deco-corner-br { bottom: 10%; right: 6%; }
+.sway { animation: sway 5s ease-in-out infinite; transform-origin: center; }
+.sway-rev { animation: sway 5s ease-in-out infinite reverse; transform-origin: center; }
+@keyframes sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+.sparkle {
+  position: absolute;
+  z-index: 1;
+}
+.sparkle-1 { top: 22%; left: 30%; }
+.sparkle-2 { top: 30%; right: 26%; }
+.twinkle { animation: twinkle 2.4s ease-in-out infinite; }
+.twinkle-delay { animation: twinkle 2.4s ease-in-out infinite 1.1s; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.deco-mini-cake { margin: 10px auto 0; position: relative; z-index: 1; }
+.deco-mini-cake .flame { animation: flicker 1.4s ease-in-out infinite; transform-origin: bottom center; }
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.85) translateX(0.5px); }
 }
 .hero-name {
   font-family: var(--font-display);
