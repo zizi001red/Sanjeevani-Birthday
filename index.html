@@ -9,72 +9,48 @@
 <title>Sanjeevani</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=16">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500&family=Jost:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
 <!-- ================= LOCK SCREEN ================= -->
 <div id="lock-screen">
   <div class="lock-inner">
-    <p class="lock-eyebrow">for Sanjeevani</p>
-    <p class="lock-line">something's waiting for you here.</p>
-    <p class="lock-line">just not yet.</p>
+    <p class="lock-eyebrow">an exhibition, for Sanjeevani</p>
+    <p class="lock-line">the doors open soon.</p>
     <div id="countdown" class="countdown"></div>
+  </div>
+</div>
+
+<!-- ================= SCROLL PROGRESS ================= -->
+<div class="progress-rail"><div class="progress-fill" id="progress-fill"></div></div>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox-frame">
+    <img id="lightbox-img" src="" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
   </div>
 </div>
 
 <!-- ================= MAIN SITE ================= -->
 <main id="site" hidden>
 
-  <!-- floating petals layer -->
-  <div class="petals" aria-hidden="true"></div>
-
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-
-    <svg class="deco-corner deco-corner-tl sway reveal" viewBox="0 0 80 80" width="70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g transform="translate(30,30)"><circle r="7" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-9" cy="4" r="6" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="9" cy="4" r="6" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-9" r="6" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="3" fill="var(--gold)"/></g>
-      <path d="M30 45 Q20 55 15 68" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-    </svg>
-    <svg class="deco-corner deco-corner-br sway-rev reveal" viewBox="0 0 80 80" width="70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g transform="translate(50,50)"><circle r="7" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-9" cy="4" r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="9" cy="4" r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-9" r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="3" fill="var(--gold)"/></g>
-      <path d="M50 65 Q60 55 65 42" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-    </svg>
-
-    <svg class="sparkle sparkle-1 twinkle" viewBox="0 0 20 20" width="14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="var(--gold)"/></svg>
-    <svg class="sparkle sparkle-2 twinkle-delay" viewBox="0 0 20 20" width="10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="var(--rose)"/></svg>
-
+    <p class="hero-kicker reveal">an exhibition</p>
+    <div class="hero-rule reveal"></div>
     <h1 class="hero-name reveal">It's HER Birthday.</h1>
-    <svg class="deco-flowers sway reveal" viewBox="0 0 100 60" width="100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M20 60 Q22 40 30 25" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-      <path d="M50 60 Q50 35 50 15" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-      <path d="M80 60 Q78 40 70 25" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-      <g transform="translate(30,20)"><circle r="5" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-6" cy="3" r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="6" cy="3" r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-6" r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="2" fill="var(--gold)"/></g>
-      <g transform="translate(50,10)"><circle r="6" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-7" cy="3" r="5" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="7" cy="3" r="5" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-7" r="5" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="2.5" fill="var(--gold)"/></g>
-      <g transform="translate(70,20)"><circle r="5" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-6" cy="3" r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="6" cy="3" r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-6" r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="2" fill="var(--gold)"/></g>
-      <path d="M25 45 Q15 42 12 35" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-      <path d="M75 45 Q85 42 88 35" fill="none" stroke="var(--rose)" stroke-width="1.5"/>
-    </svg>
-    <p class="hero-sub reveal">est. 2018 &mdash; still going</p>
-
-    <svg class="deco-mini-cake reveal" viewBox="0 0 60 50" width="46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path class="flame" d="M30 2 C 32 6, 32 8, 30 11 C 28 8, 28 6, 30 2 Z" fill="var(--gold)"/>
-      <rect x="28" y="11" width="4" height="7" rx="1.5" fill="var(--rose-deep)"/>
-      <path d="M12 18 L48 18 L44 40 Q30 46 16 40 Z" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-      <path d="M12 18 Q18 12 30 18 Q42 12 48 18" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-    </svg>
-
-    <div class="hero-scroll reveal" aria-hidden="true">
-      <span></span>
-    </div>
+    <div class="hero-rule reveal"></div>
+    <p class="hero-sub reveal">est. 2018</p>
+    <div class="hero-scroll reveal" aria-hidden="true"><span></span></div>
   </section>
 
-  <!-- HANDWRITTEN NOTE -->
+  <!-- CURATOR'S NOTE -->
   <section class="note-section" id="note">
+    <p class="section-kicker reveal">curator's note</p>
     <div class="note-card reveal">
-      <p class="note-tape" aria-hidden="true"></p>
       <p class="note-text">
         baby,<br><br>
         remember the first day of college? that professor doing attendance, total chaos at the door, and you just turned around and asked for my roll number like it was nothing. i didn't know that one moment would turn into this.<br><br>
@@ -86,152 +62,150 @@
     </div>
   </section>
 
-  <!-- LITTLE NOTE 1 -->
-  <section class="little-note" id="little-note-1">
-    <p class="little-note-text reveal">seven years later and you're still the first person i call</p>
+  <!-- WALL QUOTE 1 -->
+  <section class="wall-quote" id="wall-quote-1">
+    <p class="wall-quote-text reveal">seven years later and you're still the first person i call</p>
   </section>
 
-  <!-- MEMORIES -->
+  <!-- COLLECTION INTRO -->
   <section class="memories-intro" id="memories-intro">
-    <svg class="deco-cupcake reveal" viewBox="0 0 60 60" width="54" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M28 6 C 30 10, 30 13, 28 16 C 26 13, 26 10, 28 6 Z" fill="var(--gold)"/>
-      <rect x="26" y="16" width="4" height="9" rx="2" fill="var(--rose-deep)"/>
-      <path d="M14 27 L44 27 L40 44 Q28 50 16 44 Z" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-      <path d="M14 27 Q18 20 28 27 Q38 20 44 27" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-    </svg>
-    <p class="section-eyebrow reveal">seven years, in pieces</p>
-    <h2 class="section-title reveal">our memories</h2>
-    <button class="btn-memories reveal" id="open-memories">open our memories</button>
+    <p class="section-kicker reveal">the collection</p>
+    <h2 class="section-title reveal">seven years, in pieces</h2>
+    <button class="btn-enter reveal" id="open-memories">enter the galleries</button>
   </section>
 
-  <section class="timeline" id="timeline" hidden>
-    <div class="thread" aria-hidden="true"></div>
+  <section class="galleries" id="timeline" hidden>
 
-    <div class="year-block" data-year="2018">
-      <div class="year-marker"><span>2018</span></div>
-      <p class="year-caption reveal">where it all started</p>
-      <div class="year-photos reveal">
-        <img src="images/2018-01.jpg" alt="2018 memory" loading="lazy">
+    <div class="gallery-room" data-year="2018">
+      <p class="gallery-label reveal">Gallery I</p>
+      <h3 class="gallery-title reveal">2018 &middot; Where It Started</h3>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="2018 &middot; Where It Started">
+          <img src="images/2018-01.jpg" alt="2018 memory" loading="lazy">
+          <figcaption>Photograph, 2018</figcaption>
+        </figure>
       </div>
     </div>
 
-    <div class="year-block" data-year="2019">
-      <div class="year-marker"><span>2019</span></div>
-      <p class="year-caption reveal">just us, being us</p>
-      <div class="year-photos reveal">
-        <img src="images/2018-02.jpg" alt="2019 memory" loading="lazy">
+    <div class="gallery-room" data-year="2019">
+      <p class="gallery-label reveal">Gallery II</p>
+      <h3 class="gallery-title reveal">2019 &middot; Just Us, Being Us</h3>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="2019 &middot; Just Us, Being Us">
+          <img src="images/2018-02.jpg" alt="2019 memory" loading="lazy">
+          <figcaption>Photograph, 2019</figcaption>
+        </figure>
       </div>
     </div>
 
-    <div class="year-block thin" data-year="2020">
-      <div class="year-marker"><span>2020</span></div>
-      <p class="year-caption reveal">the year the world stood still, and we lived on video calls</p>
-      <div class="year-photos reveal">
-        <img src="images/2020-illustration.jpg" alt="2020 memory" loading="lazy">
-        <img src="images/2020-02.jpg" alt="2020 memory" loading="lazy">
+    <div class="gallery-room dim" data-year="2020">
+      <p class="gallery-label reveal">Gallery III</p>
+      <h3 class="gallery-title reveal">2020 &middot; The Distance</h3>
+      <p class="gallery-note reveal">the year the world stood still, and we lived on video calls</p>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="2020 &middot; The Distance">
+          <img src="images/2020-illustration.jpg" alt="2020 memory" loading="lazy">
+          <figcaption>Mixed Media, 2020</figcaption>
+        </figure>
+        <figure class="framed-photo" data-caption="2020 &middot; The Distance">
+          <img src="images/2020-02.jpg" alt="2020 memory" loading="lazy">
+          <figcaption>Photograph, 2020</figcaption>
+        </figure>
       </div>
     </div>
 
-    <div class="year-block" data-year="2021">
-      <div class="year-marker"><span>2021</span></div>
-      <p class="year-caption reveal">still finding our way back to each other</p>
-      <div class="year-photos reveal">
-        <img src="images/2021.jpg" alt="2021 memory" loading="lazy">
+    <div class="gallery-room" data-year="2021">
+      <p class="gallery-label reveal">Gallery IV</p>
+      <h3 class="gallery-title reveal">2021 &middot; Finding Our Way Back</h3>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="2021 &middot; Finding Our Way Back">
+          <img src="images/2021.jpg" alt="2021 memory" loading="lazy">
+          <figcaption>Photograph, 2021</figcaption>
+        </figure>
       </div>
     </div>
 
-    <div class="year-block" data-year="2022">
-      <div class="year-marker"><span>2022</span></div>
-      <p class="year-caption reveal">us, again</p>
-      <div class="year-photos reveal">
-        <img src="images/2022.jpg" alt="2022 memory" loading="lazy">
+    <div class="gallery-room" data-year="2022">
+      <p class="gallery-label reveal">Gallery V</p>
+      <h3 class="gallery-title reveal">2022 &middot; Us, Again</h3>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="2022 &middot; Us, Again">
+          <img src="images/2022.jpg" alt="2022 memory" loading="lazy">
+          <figcaption>Photograph, 2022</figcaption>
+        </figure>
       </div>
     </div>
 
-    <div class="year-block" data-year="last">
-      <div class="year-marker"><span>the last time we met</span></div>
-      <p class="year-caption reveal">distance moved us apart. never once by heart.</p>
-      <div class="year-photos reveal">
-        <img src="images/last-meeting.jpg" alt="our last meeting" loading="lazy">
+    <div class="gallery-room final" data-year="last">
+      <p class="gallery-label reveal">Gallery VI</p>
+      <h3 class="gallery-title reveal">The Reunion</h3>
+      <p class="gallery-note reveal">distance moved us apart. never once by heart.</p>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="The Reunion">
+          <img src="images/last-meeting.jpg" alt="our last meeting" loading="lazy">
+          <figcaption>Photograph, Present Day</figcaption>
+        </figure>
       </div>
     </div>
+
+    <div class="gallery-room" data-year="more">
+      <p class="gallery-label reveal">Gallery VII</p>
+      <h3 class="gallery-title reveal">Additional Works</h3>
+      <div class="frame-row reveal">
+        <figure class="framed-photo" data-caption="Additional Works"><img src="images/moment-funny.jpg" alt="us" loading="lazy"><figcaption>Photograph</figcaption></figure>
+        <figure class="framed-photo" data-caption="Additional Works"><img src="images/bonus-02.jpg" alt="us" loading="lazy"><figcaption>Photograph</figcaption></figure>
+        <figure class="framed-photo" data-caption="Additional Works"><img src="images/bonus-03.jpg" alt="us" loading="lazy"><figcaption>Photograph</figcaption></figure>
+        <figure class="framed-photo" data-caption="Additional Works"><img src="images/new-memory-01.jpg" alt="us" loading="lazy"><figcaption>Photograph</figcaption></figure>
+      </div>
+    </div>
+
   </section>
 
-  <!-- FLOWER DIVIDER -->
-  <div class="flower-divider reveal" aria-hidden="true">
-    <svg viewBox="0 0 200 30" width="150" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(30,15)"><circle r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-5" cy="2" r="3" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="5" cy="2" r="3" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-5" r="3" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="1.5" fill="var(--gold)"/></g>
-      <path d="M50 15 L150 15" stroke="var(--rose)" stroke-width="1" opacity="0.4" stroke-dasharray="2 4"/>
-      <g transform="translate(170,15)"><circle r="4" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-5" cy="2" r="3" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="5" cy="2" r="3" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-5" r="3" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="1.5" fill="var(--gold)"/></g>
-    </svg>
-  </div>
-
-  <!-- MORE OF US -->
-  <section class="more-us" id="more-us">
-    <p class="section-eyebrow reveal">and just&hellip;</p>
-    <h2 class="section-title reveal">more of us</h2>
-    <div class="year-photos reveal">
-      <img src="images/moment-funny.jpg" alt="us" loading="lazy">
-      <img src="images/bonus-02.jpg" alt="us" loading="lazy">
-      <img src="images/bonus-03.jpg" alt="us" loading="lazy">
-      <img src="images/new-memory-01.jpg" alt="us" loading="lazy">
-    </div>
+  <!-- WALL QUOTE 2 -->
+  <section class="wall-quote" id="wall-quote-2">
+    <p class="wall-quote-text reveal">shimla was far but it never really felt like it</p>
   </section>
 
-  <!-- LITTLE NOTE 2 -->
-  <section class="little-note" id="little-note-2">
-    <p class="little-note-text reveal">shimla was far but it never really felt like it</p>
-  </section>
-
-  <!-- BECAUSE SHE'S BEAUTIFUL -->
-  <section class="beautiful" id="beautiful">
-    <p class="section-eyebrow reveal">a page just for you</p>
+  <!-- PORTRAIT GALLERY -->
+  <section class="portrait-gallery" id="beautiful">
+    <p class="section-kicker reveal">the portrait gallery</p>
     <h2 class="section-title reveal">because she's beautiful</h2>
-    <div class="beautiful-grid">
-      <img class="reveal" src="images/beautiful-01.jpg" alt="Sanjeevani" loading="lazy">
-      <img class="reveal" src="images/beautiful-02.jpg" alt="Sanjeevani" loading="lazy">
-      <img class="reveal" src="images/beautiful-03.jpg" alt="Sanjeevani" loading="lazy">
-      <img class="reveal" src="images/beautiful-04.jpg" alt="Sanjeevani" loading="lazy">
-      <img class="reveal collage-img" src="images/beautiful-collage.jpg" alt="collage of us" loading="lazy">
+    <div class="portrait-grid">
+      <figure class="framed-photo reveal" data-caption="Portrait"><img src="images/beautiful-01.jpg" alt="Sanjeevani" loading="lazy"><figcaption>Portrait</figcaption></figure>
+      <figure class="framed-photo reveal" data-caption="Portrait"><img src="images/beautiful-02.jpg" alt="Sanjeevani" loading="lazy"><figcaption>Portrait</figcaption></figure>
+      <figure class="framed-photo reveal" data-caption="Portrait"><img src="images/beautiful-03.jpg" alt="Sanjeevani" loading="lazy"><figcaption>Portrait</figcaption></figure>
+      <figure class="framed-photo reveal" data-caption="Portrait"><img src="images/beautiful-04.jpg" alt="Sanjeevani" loading="lazy"><figcaption>Portrait</figcaption></figure>
+      <figure class="framed-photo reveal wide" data-caption="Collection"><img src="images/beautiful-collage.jpg" alt="collage of us" loading="lazy"><figcaption>Collection</figcaption></figure>
     </div>
   </section>
 
-  <!-- FLOWER DIVIDER -->
-  <div class="flower-divider reveal" aria-hidden="true">
-    <svg viewBox="0 0 200 30" width="150" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(30,15)"><circle r="4" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-5" cy="2" r="3" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="5" cy="2" r="3" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-5" r="3" fill="var(--lavender)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="1.5" fill="var(--gold)"/></g>
-      <path d="M50 15 L150 15" stroke="var(--rose)" stroke-width="1" opacity="0.4" stroke-dasharray="2 4"/>
-      <g transform="translate(170,15)"><circle r="4" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="-5" cy="2" r="3" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cx="5" cy="2" r="3" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle cy="-5" r="3" fill="var(--blush)" stroke="var(--rose-deep)" stroke-width="1"/><circle r="1.5" fill="var(--gold)"/></g>
-    </svg>
-  </div>
-
-  <!-- QUOTES -->
-  <section class="quotes" id="quotes">
-    <div class="quotes-grid">
-      <img class="reveal quote-tile" src="images/beautiful-quote.jpg" alt="quote" loading="lazy">
-      <img class="reveal quote-tile" src="images/quote-02.jpg" alt="quote" loading="lazy">
-      <img class="reveal quote-tile" src="images/quote-03.jpg" alt="quote" loading="lazy">
-      <img class="reveal quote-tile" src="images/quote-04.jpg" alt="quote" loading="lazy">
+  <!-- GUESTBOOK -->
+  <section class="guestbook" id="quotes">
+    <p class="section-kicker reveal">from the guestbook</p>
+    <div class="guestbook-grid">
+      <img class="reveal guestbook-tile" src="images/beautiful-quote.jpg" alt="quote" loading="lazy">
+      <img class="reveal guestbook-tile" src="images/quote-02.jpg" alt="quote" loading="lazy">
+      <img class="reveal guestbook-tile" src="images/quote-03.jpg" alt="quote" loading="lazy">
+      <img class="reveal guestbook-tile" src="images/quote-04.jpg" alt="quote" loading="lazy">
     </div>
   </section>
 
   <!-- CLOSING -->
   <section class="closing" id="closing">
-    <svg class="deco-cake reveal" viewBox="0 0 120 110" width="100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="deco-cake reveal" viewBox="0 0 120 110" width="90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M60 6 C 63 12, 63 16, 60 20 C 57 16, 57 12, 60 6 Z" fill="var(--gold)"/>
-      <rect x="57" y="20" width="6" height="13" rx="2" fill="var(--rose-deep)"/>
-      <path d="M40 34 L80 34 L76 52 L44 52 Z" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-      <path d="M40 40 Q50 44 60 40 T80 40" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-      <path d="M24 52 L96 52 L90 86 L30 86 Z" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-      <path d="M24 61 Q40 67 60 61 T96 61" fill="none" stroke="var(--rose-deep)" stroke-width="2"/>
-      <ellipse cx="60" cy="88" rx="42" ry="6" fill="none" stroke="var(--rose)" stroke-width="2"/>
+      <rect x="57" y="20" width="6" height="13" rx="2" fill="var(--gold)"/>
+      <path d="M40 34 L80 34 L76 52 L44 52 Z" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+      <path d="M24 52 L96 52 L90 86 L30 86 Z" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+      <ellipse cx="60" cy="88" rx="42" ry="6" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
     </svg>
+    <p class="section-kicker reveal">closing remarks</p>
     <p class="closing-line reveal">happy birthday, baby.</p>
     <p class="closing-sub reveal">here's to the years we've had, and every one still coming.</p>
   </section>
 
 </main>
 
-<script src="script.js?v=16"></script>
+<script src="script.js?v=17"></script>
 </body>
 </html>
