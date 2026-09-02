@@ -298,10 +298,16 @@ main section {
 }
 .frame-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 4px 10px 16px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
 }
+.frame-row::-webkit-scrollbar { height: 5px; }
+.frame-row::-webkit-scrollbar-thumb { background: var(--gold-soft); border-radius: 3px; }
+.frame-row .framed-photo { flex: 0 0 auto; scroll-snap-align: center; }
 
 /* ============ FRAMED PHOTO (shared: galleries + portraits) ============ */
 .framed-photo {
