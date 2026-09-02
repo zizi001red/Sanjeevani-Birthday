@@ -17,6 +17,7 @@ function showSite() {
   initReveal();
   initProgress();
   initLightbox();
+  initButterflies();
 }
 
 function tick() {
@@ -32,6 +33,28 @@ function tick() {
 }
 
 if (isPreview) { showSite(); } else { tick(); }
+
+// ---- BUTTERFLIES ----
+function initButterflies() {
+  const layer = document.querySelector('.butterflies');
+  if (!layer) return;
+  const svgMarkup = `<svg viewBox="0 0 40 30" width="26" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 15 C 10 0, 0 5, 5 15 C 0 25, 10 30, 20 15 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="0.6"/>
+    <path d="M20 15 C 30 0, 40 5, 35 15 C 40 25, 30 30, 20 15 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="0.6"/>
+    <line x1="20" y1="8" x2="20" y2="22" stroke="var(--frame)" stroke-width="1"/>
+  </svg>`;
+  const count = window.innerWidth < 640 ? 3 : 5;
+  for (let i = 0; i < count; i++) {
+    const b = document.createElement('div');
+    b.className = 'butterfly';
+    b.innerHTML = svgMarkup;
+    b.style.top = 10 + Math.random() * 70 + 'vh';
+    b.style.left = '-40px';
+    b.style.animationDuration = 16 + Math.random() * 10 + 's';
+    b.style.animationDelay = Math.random() * 14 + 's';
+    layer.appendChild(b);
+  }
+}
 
 // ---- SCROLL REVEAL ----
 function initReveal() {
