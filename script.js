@@ -72,6 +72,20 @@ function initProgress() {
   }, { passive: true });
 }
 
+// ---- NOTE REVEAL ----
+const openNoteBtn = document.getElementById('open-note');
+const noteCard = document.getElementById('note-card');
+if (openNoteBtn) {
+  openNoteBtn.addEventListener('click', () => {
+    noteCard.hidden = false;
+    openNoteBtn.style.display = 'none';
+    setTimeout(() => {
+      noteCard.classList.add('in');
+      noteCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 30);
+  });
+}
+
 // ---- MEMORIES / GALLERIES BUTTON ----
 const openMemoriesBtn = document.getElementById('open-memories');
 const timeline = document.getElementById('timeline');
