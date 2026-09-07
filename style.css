@@ -355,16 +355,11 @@ main section {
 }
 .frame-row {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 18px;
-  overflow-x: auto;
-  padding: 4px 10px 16px;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
 }
-.frame-row::-webkit-scrollbar { height: 5px; }
-.frame-row::-webkit-scrollbar-thumb { background: var(--gold-soft); border-radius: 3px; }
-.frame-row .framed-photo { flex: 0 0 auto; scroll-snap-align: center; }
+.frame-row .framed-photo { flex: 0 0 auto; }
 
 /* ============ FRAMED PHOTO (shared: galleries + portraits) ============ */
 .framed-photo {
@@ -372,21 +367,21 @@ main section {
   cursor: zoom-in;
 }
 .framed-photo img {
-  max-width: 280px;
-  max-height: 52vh;
+  max-width: 190px;
+  max-height: 42vh;
   width: auto;
   height: auto;
-  border: 6px solid var(--paper);
+  border: 5px solid var(--paper);
   outline: 1px solid var(--gold-soft);
-  box-shadow: 0 24px 50px -20px rgba(43,40,37,0.35);
+  box-shadow: 0 16px 34px -16px rgba(43,40,37,0.35);
 }
 .framed-photo figcaption {
   font-family: var(--font-body);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--plaque);
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 /* ============ PORTRAIT GALLERY ============ */
@@ -445,6 +440,6 @@ main section {
 @media (max-width: 640px) {
   main section { padding: 90px 18px; }
   .note-card { padding: 40px 24px; }
-  .framed-photo img { width: 100%; max-width: 280px; }
+  .framed-photo img { max-width: 42vw; }
   .portrait-grid .framed-photo img { width: 44vw; }
 }
