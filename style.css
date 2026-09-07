@@ -1,14 +1,14 @@
 /* ============ TOKENS ============ */
 :root {
-  --wall: #F5EEE3;
-  --wall-2: #E9DEC9;
-  --frame: #17140F;
-  --ink: #24211C;
-  --gold: #A97C50;
-  --gold-soft: #C9A876;
-  --wine: #5C1F2E;
-  --plaque: #7A7268;
-  --paper: #FFFDF9;
+  --wall: #EFE4F1;
+  --wall-2: #E1CCE6;
+  --frame: #2B1B2E;
+  --ink: #3A2640;
+  --gold: #C68A72;
+  --gold-soft: #E0B8A8;
+  --wine: #C9184A;
+  --plaque: #7A6884;
+  --paper: #FCF7FB;
 
   --font-display: 'Playfair Display', serif;
   --font-hand: 'Caveat', cursive;
@@ -170,7 +170,7 @@ main section {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(155deg, rgba(23,20,15,0.55) 0%, rgba(92,31,46,0.68) 100%);
+  background: linear-gradient(155deg, rgba(43,27,46,0.55) 0%, rgba(201,24,74,0.55) 100%);
 }
 .hero-content {
   position: relative;
@@ -416,7 +416,7 @@ main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(155deg, var(--frame) 0%, var(--wine) 130%);
+  background: linear-gradient(155deg, var(--frame) 0%, var(--wine) 140%);
 }
 .closing .section-kicker { color: var(--gold-soft); }
 .closing-line {
