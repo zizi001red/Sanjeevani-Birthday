@@ -282,27 +282,17 @@ main section {
 /* ============ GALLERIES ============ */
 .galleries {
   background: var(--wall-2);
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  height: min(94vh, 720px);
+  padding: 20px 0 60px;
 }
-.galleries::-webkit-scrollbar { height: 6px; }
-.galleries::-webkit-scrollbar-thumb { background: var(--gold-soft); border-radius: 3px; }
 .gallery-room {
-  flex: 0 0 100vw;
-  scroll-snap-align: start;
-  height: 100%;
-  overflow-y: auto;
-  padding: 54px 24px 24px;
-  border-right: 1px solid rgba(184,146,90,0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 90px 24px 30px;
+  max-width: 720px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(184,146,90,0.3);
+  display: block;
   text-align: center;
 }
+.gallery-room:first-child { border-top: none; }
 .gallery-room.dim { background: rgba(43,40,37,0.03); }
 .gallery-label {
   font-family: var(--font-body);
@@ -363,10 +353,10 @@ main section {
 /* ============ PORTRAIT GALLERY ============ */
 .portrait-gallery { background: var(--wall); }
 .portrait-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 400px;
   margin: 0 auto;
 }
 .portrait-grid .framed-photo { width: 100%; overflow: hidden; }
@@ -425,5 +415,5 @@ main section {
   main section { padding: 90px 18px; }
   .note-card { padding: 40px 24px; }
   .framed-photo img { max-width: 42vw; }
-  .portrait-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .portrait-grid { gap: 20px; }
 }
