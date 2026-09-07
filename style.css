@@ -362,13 +362,22 @@ main section {
 /* ============ PORTRAIT GALLERY ============ */
 .portrait-gallery { background: var(--wall); }
 .portrait-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 760px;
+  margin: 0 auto;
 }
-.portrait-grid .framed-photo img { width: 200px; aspect-ratio: 3/4; object-fit: cover; }
-.portrait-grid .wide img { width: 300px; aspect-ratio: auto; object-fit: contain; }
+.portrait-grid .framed-photo { width: 100%; overflow: hidden; }
+.portrait-grid .framed-photo img {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portrait-grid .framed-photo:hover img { transform: scale(1.06); }
 
 /* ============ GUESTBOOK ============ */
 .guestbook { background: var(--wall-2); }
@@ -417,5 +426,5 @@ main section {
   main section { padding: 90px 18px; }
   .note-card { padding: 40px 24px; }
   .framed-photo img { max-width: 42vw; }
-  .portrait-grid .framed-photo img { width: 44vw; }
+  .portrait-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
