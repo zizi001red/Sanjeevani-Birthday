@@ -1,11 +1,12 @@
 /* ============ TOKENS ============ */
 :root {
-  --wall: #FAF6F0;
-  --wall-2: #F2EBDF;
-  --frame: #211F1D;
-  --ink: #2B2825;
-  --gold: #B8925A;
-  --gold-soft: #D8BE94;
+  --wall: #F5EEE3;
+  --wall-2: #E9DEC9;
+  --frame: #17140F;
+  --ink: #24211C;
+  --gold: #A97C50;
+  --gold-soft: #C9A876;
+  --wine: #5C1F2E;
   --plaque: #7A7268;
   --paper: #FFFDF9;
 
@@ -268,7 +269,7 @@ main section {
   cursor: pointer;
   transition: background 0.35s ease, color 0.35s ease;
 }
-.btn-enter:hover { background: var(--frame); color: var(--paper); }
+.btn-enter:hover { background: var(--wine); color: var(--paper); border-color: var(--wine); }
 .swipe-hint {
   font-family: var(--font-body);
   letter-spacing: 0.08em;
@@ -372,12 +373,10 @@ main section {
 .portrait-grid .framed-photo img {
   width: 100%;
   max-width: none;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.portrait-grid .framed-photo:hover img { transform: scale(1.06); }
+.portrait-grid .framed-photo:hover img { transform: scale(1.04); }
 
 /* ============ GUESTBOOK ============ */
 .guestbook { background: var(--wall-2); }
@@ -403,7 +402,7 @@ main section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--frame);
+  background: linear-gradient(155deg, var(--frame) 0%, var(--wine) 130%);
 }
 .closing .section-kicker { color: var(--gold-soft); }
 .closing-line {
