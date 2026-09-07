@@ -313,7 +313,7 @@ main section {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  height: min(88vh, 620px);
+  height: min(94vh, 720px);
 }
 .galleries::-webkit-scrollbar { height: 6px; }
 .galleries::-webkit-scrollbar-thumb { background: var(--gold-soft); border-radius: 3px; }
@@ -372,7 +372,10 @@ main section {
   cursor: zoom-in;
 }
 .framed-photo img {
-  width: 280px;
+  max-width: 280px;
+  max-height: 52vh;
+  width: auto;
+  height: auto;
   border: 6px solid var(--paper);
   outline: 1px solid var(--gold-soft);
   box-shadow: 0 24px 50px -20px rgba(43,40,37,0.35);
