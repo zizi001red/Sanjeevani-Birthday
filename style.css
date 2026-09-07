@@ -354,15 +354,17 @@ main section {
 .portrait-gallery { background: var(--wall); }
 .portrait-grid {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 400px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 760px;
   margin: 0 auto;
 }
-.portrait-grid .framed-photo { width: 100%; overflow: hidden; }
+.portrait-grid .framed-photo { width: auto; overflow: visible; }
 .portrait-grid .framed-photo img {
-  width: 100%;
-  max-width: none;
+  max-width: 210px;
+  max-height: 45vh;
+  width: auto;
   height: auto;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -415,5 +417,5 @@ main section {
   main section { padding: 90px 18px; }
   .note-card { padding: 40px 24px; }
   .framed-photo img { max-width: 42vw; }
-  .portrait-grid { gap: 20px; }
+  .portrait-grid { gap: 14px; }
 }
