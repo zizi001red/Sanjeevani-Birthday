@@ -44,6 +44,19 @@ function initReveal() {
     });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach((t) => io.observe(t));
+
+  const closingLine = document.getElementById('closing-line');
+  if (closingLine) {
+    const io2 = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io2.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    io2.observe(closingLine);
+  }
 }
 
 // scroll reveal for elements that unhide later (inside the galleries section)
