@@ -1,6 +1,6 @@
 // ---- CONFIG ----
 // Set to false once you're ready to send the real link — that turns the countdown lock back on.
-const DEV_MODE = true;
+const DEV_MODE = false;
 
 // Sept 10, 2026, 00:00 IST expressed in UTC (IST = UTC+5:30)
 const UNLOCK_AT = Date.UTC(2026, 8, 9, 18, 30, 0);
